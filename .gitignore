@@ -1,13 +1,30 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# build
+/build
+
 # dependencies
 /node_modules
 
-# testing
-/coverage
+# IDE
+.vscode/
+.idea/
+.*.swp
+
+# lock
+package-lock.json
+
+# log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # production
 /build
+
+# testing
+/coverage
+**/screenshots/
 
 # misc
 .DS_Store
@@ -15,7 +32,3 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
