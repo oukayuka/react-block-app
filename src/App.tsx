@@ -1,22 +1,24 @@
-import * as React from 'react';
-import './App.css';
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { InjectedTranslateProps, translate } from 'react-i18next';
+import { Redirect, Route, RouteComponentProps, Switch } from 'react-router';
+import { compose, pure } from 'recompose';
 
-import logo from './logo.svg';
+import Top from 'components/Top';
+import i18n from 'i18n';
 
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+type AppProps = {} & RouteComponentProps<{}> & InjectedTranslateProps;
 
-export default App;
+const App: React.SFC<AppProps> = ({ t }) => (
+  <>
+    <Helmet htmlAttributes={{ lang: i18n.language }}>
+      <title>{t('top.title')}</title>
+    </Helmet>
+    <Switch>
+      <Route path="/" exact={true} component={Top} />
+      <Redirect to="/" />;
+    </Switch>
+  </>
+);
+
+export default compose<AppProps, {}>(translate(), pure)(App);

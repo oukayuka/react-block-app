@@ -17,7 +17,7 @@
     "noUnusedLocals": true,
     "outDir": "build/compiled",
     "pretty": true,
-    "rootDir": "./",
+    "rootDirs": ["./", "src", "typings"],
     "skipLibCheck": true,
     "sourceMap": true,
     "strictFunctionTypes": true,

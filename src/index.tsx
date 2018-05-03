@@ -10,8 +10,6 @@ import i18n from './i18n';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 
-import './index.css';
-
 const history = createBrowserHistory();
 
 ReactDOM.render(
@@ -25,5 +23,4 @@ ReactDOM.render(
   document.getElementById('root') as HTMLElement,
 );
 
-ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);
 registerServiceWorker();

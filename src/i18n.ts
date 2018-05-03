@@ -14,7 +14,14 @@ i18n
     defaultNS: 'pages',
     debug: !isProduction(),
     backend: {
+      crossDomain: false,
+      withCredentials: false,
       loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+    preload: ['en', 'ja'],
+    react: {
+      wait: false,
+      nsMode: 'default',
     },
   });
 
